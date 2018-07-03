@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+// 引入base文件( 适配文件  公共样式)
+@import "base";
+
+
+
+
+
+
+.mmm_main {
+  //首页主体导航栏
+  .mmm_nav {
+
+    background-color: #fff;
+    margin-top: 12rem / @base;
+
+
+    li {
+      width: 25%;
+      float: left;
+      margin: 18rem / @base 0;
+
+      &:nth-last-child(-n+4) {
+        display: none;
+      }
+
+      &.hide {
+        display: block;
+      }
+
+
+      a {
+        display: block;
+
+        img {
+          width: 50rem / @base;
+          height: 50rem / @base;
+          margin: 0 auto;
+        }
+
+        p {
+          text-align: center;
+          font-size: 12rem / @base;
+          padding-top: 8rem / @base;
+        }
+      }
+    }
+  }
+
+  //超值推荐
+  .mmm_product {
+    margin-top: 5rem / @base;
+    background-color: #fff;
+
+    .product_nav{
+      height: 35rem / @base;
+      background-color: @mmmColor;
+      padding: 7rem / @base;
+
+      .nav_left {
+        color: #fff;
+        font-size: 14rem / @base;
+      }
+      .nav_right {
+        width: 20rem / @base;
+        height: 20rem / @base;
+      }
+    }
+
+
+
+  }
+}
+
+
+
+

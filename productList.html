@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <!-- 引入css -->
+  <link rel="stylesheet" href="./css/productList.css">
+
+
+
+</head>
+<body>
+
+<div class="mmm_container">
+  <!-- 买买买头部 -->
+  <div class="mmm_header">
+    <div class="logo_left">
+      <a href="index.html">
+        <img src="./images/header_logo.png">
+      </a>
+    </div>
+    <div class="logo_right">
+      <a href="#">
+        <img src="./images/header_app.png">
+      </a>
+    </div>
+  </div>
+
+  <!--页面主体部分-->
+  <div class="mmm_main">
+    <!--搜索框-->
+    <div class="mmm_search">
+      <input type="text" placeholder="请输入你想比价的商品">
+      <button>搜索</button>
+    </div>
+
+    <!--商品区域-->
+    <div class="mmm_product">
+
+      <!--分类导航-->
+      <div class="category_nav">
+        <div class="nav_left fl">
+          <a href="#">首页 ></a>
+          <a href="#">全部分类 ></a>
+          <a href="#" class="category">电视</a>
+        </div>
+        <div class="nav_right fr">
+          <a href="#" class="a_btn">筛选</a>
+        </div>
+      </div>
+
+      <div class="product_content">
+        <!--商品列表-->
+        <ul class="clearfix">
+          <!--坑1-->
+
+        </ul>
+
+      </div>
+    </div>
+
+    <!--分类页部分-->
+    <div class="mmm_cate">
+      <ul>
+        <li><a href="#" class="a_btn prev">上一页</a></li>
+        <li><a href="javascript:;">
+
+            <select name="pageid" id="cateSel" class="cateSel">
+
+             <!--坑-->
+            </select>
+        </a>
+
+        </li>
+        <li><a href="#" class="a_btn next">下一页</a></li>
+      </ul>
+    </div>
+
+
+
+  </div>
+
+  <!-- 买买买底部通栏 -->
+
+  <div class="mmm_footer">
+
+
+    <!--2.登录注册操作-->
+    <div class="foot_function">
+      <a href="#">登录</a>
+      <a href="#">注册</a>
+      <a href="#" class="toTop">
+        <img src="./images/top.jpg">
+        返回顶部
+      </a>
+    </div>
+
+    <!--3.其他-->
+    <div class="foot_other">
+      <p>
+        <a href="#">手机APP下载</a>
+        <a href="#">慢慢买手机版</a>
+        -- 掌上比价平台
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--准备产品列表页商品列表的模板-->
+
+<script type="text/template" id="cateTmp">
+  {{ each result v i }}
+  <li>
+    <a href="productDetails.html?productid={{v.productId}}">
+      <div class="list_item_img">
+        {{@v.productImg}}
+      </div>
+      <div class="list_item_info">
+        <div class="title">
+          {{ v.productName }}
+        </div>
+        <div class="price red">
+          <span>{{ v.productPrice }}</span>
+        </div>
+        <p class="bottom clearfix">
+          <span>{{ v.productQuote }}</span>
+          <span>{{ v.productCom }}</span>
+        </p>
+      </div>
+    </a>
+  </li>
+  {{ /each }}
+</script>
+
+<!--准备分页选项的模板-->
+  <script type="text/html" id="selTmp">
+    <%
+      var index = totalCount / pagesize;
+      for ( var i = 0; i < index ; i++){
+    %>
+      <option value="{{ i+1 }}">{{ i+1 }}/<%=index%></option>
+
+    <% } %>
+  </script>
+
+
+
+
+<!-- 引入jquery -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!-- 引入模板引擎 -->
+<script src="./lib/artTemplate/template-web.js"></script>
+
+<!--引入通用js-->
+<script src="./js/common.js"></script>
+
+<!--引入本页面的js-->
+<script src="./js/productList.js"></script>
+</body>
+</html>
